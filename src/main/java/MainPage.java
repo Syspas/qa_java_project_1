@@ -5,7 +5,20 @@ import static com.codeborne.selenide.Condition.*;
 
 public class MainPage {
     final static String URL = "https://qa-scooter.praktikum-services.ru/";
+    //Найти кнопку Заказать
+    @FindBy(how = How.CLASS_NAME,using = "Header_Link__1TAG7")
+    public SelenideElement btnShowInputField;
 
+    //Найти на поле  "ввести номер заказа"
+    @FindBy(how = How.XPATH,using = "//input[@class='Input_Input__1iN_Z Header_Input__xIoUq']")
+    public SelenideElement inputOrderNum;
+    //нажать на кнопку GO
+    @FindBy(how = How.XPATH,using = "//button[@class='Button_Button__ra12g Header_Button__28dPO']")
+    public SelenideElement btnFindOrder;
+
+
+
+    /// Вопросы
     //Обект вопрос № 1
     @FindBy(how = How.XPATH,using = "//div[@id='accordion__heading-0']")
     public SelenideElement question0;

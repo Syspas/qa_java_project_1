@@ -4,13 +4,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class CheckStatusPage {
+
     @FindBy(how = How.CLASS_NAME,using = "Track_NotFound__6oaoY")
-    private SelenideElement popupError;
+    public SelenideElement popupError;
 
 
-    public boolean isErrorMessageDisplayaed(){
-        return false;
 
-    }
 }
 
