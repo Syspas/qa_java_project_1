@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static org.junit.Assert.assertTrue;
 
 public class TestOrder {
-
+    private String incorrectOrderNum = "5";
    @Test
    public void checkingOrderStatus() {
        //Перейти по адресу
@@ -23,48 +23,63 @@ public class TestOrder {
        //
        assertTrue($(byClassName("Track_NotFound__6oaoY")).isDisplayed());
    }
-
+/*
     @Test
     public void checkingOrderStatus1() {
-        String incorrectOrderNum = "5";
+
 
        //Перейти по адресу
         MainPage page =Selenide.open(MainPage.URL,MainPage.class);
         //Найти кнопку заказ и нажать на нее
-        page.btnShowInputField.click();
-        //$(byClassName("Header_Link__1TAG7")).click();
+      page.btnShowInputField.click();
         //Нажать на поле  "ввести номер заказа"
-        page.inputOrderNum.click();
+      page.inputOrderNum.click();
         //ввести номер закаа в поле "ввести номер заказа"
-        page.btnFindOrder.sendKeys(incorrectOrderNum);
+      page.btnFindOrder.sendKeys(incorrectOrderNum);
         // Нажать кнопку GO для поиска заказа.
-        page.btnFindOrder.click();
+//
+   assertTrue($(byClassName("Track_NotFound__6oaoY")).isDisplayed());
 
-   //   assertTrue($(byClassName("Track_NotFound__6oaoY")).isDisplayed());
-
-    CheckStatusPage errorPage = new CheckStatusPage();
-    assertTrue(errorPage.popupError.isDisplayed());
+  //  CheckStatusPage errorPage = new CheckStatusPage();
+ //   assertTrue(errorPage.popupError.isDisplayed());
     }
-
+*/
     @Test
     public void checkingOrderStatus2() {
         String incorrectOrderNum = "5";
-
         //Перейти по адресу
         MainPage page =Selenide.open(MainPage.URL,MainPage.class);
         //Найти кнопку заказ и нажать на нее
-        page.btnShowInputField.click();
-        //$(byClassName("Header_Link__1TAG7")).click();
+        page.clickShowInputField();
         //Нажать на поле  "ввести номер заказа"
-        page.inputOrderNum.click();
         //ввести номер закаа в поле "ввести номер заказа"
-        page.btnFindOrder.sendKeys(incorrectOrderNum);
+        page.inputOrderNum(incorrectOrderNum);
         // Нажать кнопку GO для поиска заказа.
-        page.btnFindOrder.click();
+        page.clickFindOrder();
 
-        //   assertTrue($(byClassName("Track_NotFound__6oaoY")).isDisplayed());
-
+      //assertTrue($(byClassName("Track_NotFound__6oaoY")).isDisplayed());
         CheckStatusPage errorPage = new CheckStatusPage();
-        assertTrue(errorPage.popupError.isDisplayed());
+      assertTrue(errorPage.popupError.isDisplayed());
+    }
+
+    @Test
+    public void checkingOrderStatus3() {
+        //Перейти по адресу
+        boolean isErrorMessageDisplayed=Selenide.open(MainPage.URL,MainPage.class)
+        //Найти кнопку заказ и нажать на нее
+        .clickShowInputField()
+        //Нажать на поле  "ввести номер заказа"
+        //ввести номер закаа в поле "ввести номер заказа"
+        .inputOrderNum(incorrectOrderNum)
+        // Нажать кнопку GO для поиска заказа.
+        .clickFindOrder()
+        //Проверить сообщение
+        .isErrorMessageDisplayed();
+
+        //Запускаем проверку  если переменная true
+        assertTrue(isErrorMessageDisplayed);
+
+
+
     }
 }

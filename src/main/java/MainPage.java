@@ -7,17 +7,48 @@ public class MainPage {
     final static String URL = "https://qa-scooter.praktikum-services.ru/";
     //Найти кнопку Заказать
     @FindBy(how = How.CLASS_NAME,using = "Header_Link__1TAG7")
-    public SelenideElement btnShowInputField;
+    private SelenideElement btnShowInputField;
 
     //Найти на поле  "ввести номер заказа"
     @FindBy(how = How.XPATH,using = "//input[@class='Input_Input__1iN_Z Header_Input__xIoUq']")
-    public SelenideElement inputOrderNum;
+    private SelenideElement inputOrderNum;
     //нажать на кнопку GO
     @FindBy(how = How.XPATH,using = "//button[@class='Button_Button__ra12g Header_Button__28dPO']")
-    public SelenideElement btnFindOrder;
+    private SelenideElement btnFindOrder;
+
+// страница с с информациео оошибке
+@FindBy(how = How.CLASS_NAME,using = "Track_NotFound__6oaoY")
+public SelenideElement popupError;
+
+// Метод вызова информации  об ошибке
+public boolean isErrorMessageDisplayed(){
+        return popupError.isDisplayed();
+
+    }
 
 
+//
 
+    public MainPage clickShowInputField(){
+        //метод нажимает на кнопку зказать
+        btnShowInputField.click();
+        return this;
+    }
+
+    public MainPage inputOrderNum(String incorrectOrderNum){
+    //Нажать на поле  "ввести номер заказа"
+    //ввести номер закаа в поле "ввести номер заказа"
+        btnFindOrder.sendKeys(incorrectOrderNum);
+        return this;
+    }
+
+    public MainPage clickFindOrder(){
+    btnFindOrder.click();
+        return this;
+    }
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
     /// Вопросы
     //Обект вопрос № 1
     @FindBy(how = How.XPATH,using = "//div[@id='accordion__heading-0']")
