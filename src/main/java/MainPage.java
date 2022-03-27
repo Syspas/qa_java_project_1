@@ -1,10 +1,23 @@
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import static com.codeborne.selenide.Condition.*;
+import static org.junit.Assert.assertTrue;
+
 
 public class MainPage {
     final static String URL = "https://qa-scooter.praktikum-services.ru/";
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+    final static String answerText0= "Сутки — 400 рублей. Оплата курьеру — наличными или картой.";
+    final static String answerText1= "Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.";
+    final static String answerText2= "Допустим, вы оформляете заказ на 8 мая. Мы привозим самокат 8 мая в течение дня. Отсчёт времени аренды начинается с момента, когда вы оплатите заказ курьеру. Если мы привезли самокат 8 мая в 20:30, суточная аренда закончится 9 мая в 20:30.";
+    final static String answerText3="Только начиная с завтрашнего дня. Но скоро станем расторопнее.";
+    final static String answerText4="Пока что нет! Но если что-то срочное — всегда можно позвонить в поддержку по красивому номеру 1010.";
+    final static String answerText5="Самокат приезжает к вам с полной зарядкой. Этого хватает на восемь суток — даже если будете кататься без передышек и во сне. Зарядка не понадобится.";
+    final static String answerText6="Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои.";
+    final static String answerText7="Да, обязательно. Всем самокатов! И Москве, и Московской области.";
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
     //Найти кнопку Заказать
     @FindBy(how = How.CLASS_NAME,using = "Header_Link__1TAG7")
     private SelenideElement btnShowInputField;
@@ -20,7 +33,8 @@ public class MainPage {
 @FindBy(how = How.CLASS_NAME,using = "Track_NotFound__6oaoY")
 public SelenideElement popupError;
 
-// Метод вызова информации  об ошибке
+
+    // Метод вызова информации  об ошибке
 public boolean isErrorMessageDisplayed(){
         return popupError.isDisplayed();
 
@@ -52,72 +66,81 @@ public boolean isErrorMessageDisplayed(){
     /// Вопросы
     //Обект вопрос № 1
     @FindBy(how = How.XPATH,using = "//div[@id='accordion__heading-0']")
-    public SelenideElement question0;
+    public static SelenideElement question0;
 
     //Обект вопрос № 2
     @FindBy(how = How.XPATH,using = "//div[@id='accordion__heading-1']")
-    public SelenideElement question1;
+    public static SelenideElement question1;
 
     //Обект вопрос № 3
     @FindBy(how = How.XPATH,using = "//div[@id='accordion__heading-2']")
-    public SelenideElement question2;
+    public static SelenideElement question2;
 
     //Обект вопрос № 4
     @FindBy(how = How.XPATH,using = "//div[@id='accordion__heading-3']")
-    public SelenideElement question3;
+    public static SelenideElement question3;
 
     //Обект вопрос № 5
     @FindBy(how = How.XPATH,using = "//div[@id='accordion__heading-4']")
-    public SelenideElement question4;
+    public static SelenideElement question4;
 
     //Обект вопрос № 6
     @FindBy(how = How.XPATH,using = "//div[@id='accordion__heading-5']")
-    public SelenideElement question5;
+    public static SelenideElement question5;
 
     //Обект вопрос № 7
     @FindBy(how = How.XPATH,using = "//div[@id='accordion__heading-6']")
-    public SelenideElement question6;
+    public static SelenideElement question6;
 
     //Обект вопрос № 8
     @FindBy(how = How.XPATH,using = "//div[@id='accordion__heading-7']")
-    public SelenideElement question7;
+    public static SelenideElement question7;
 
     //
     //Ответ на вопрос №1
     @FindBy(how = How.ID,using = "accordion__panel-0")
-    public SelenideElement answer0;
+    public static SelenideElement answer0;
 
     //Ответ на вопрос №2
     @FindBy(how = How.ID,using = "accordion__panel-1")
-    public SelenideElement answer1;
+    public static SelenideElement answer1;
 
     //Ответ на вопрос №3
     @FindBy(how = How.ID,using = "accordion__panel-2")
-    public SelenideElement answer2;
+    public static SelenideElement answer2;
 
     //Ответ на вопрос №4
     @FindBy(how = How.ID,using = "accordion__panel-3")
-    public SelenideElement answer3;
+    public static SelenideElement answer3;
 
     //Ответ на вопрос №5
     @FindBy(how = How.ID,using = "accordion__panel-4")
-    public SelenideElement answer4;
+    public static SelenideElement answer4;
 
     //Ответ на вопрос №6
     @FindBy(how = How.ID,using = "accordion__panel-5")
-    public SelenideElement answer5;
+    public static SelenideElement answer5;
 
     //Ответ на вопрос №7
     @FindBy(how = How.ID,using = "accordion__panel-6")
-    public SelenideElement answer6;
+    public static SelenideElement answer6;
 
     //Ответ на вопрос №8
     @FindBy(how = How.ID,using = "accordion__panel-7")
-    public SelenideElement answer7;
+    public static SelenideElement answer7;
+///////////////////////////////////////////////////////////////////////////////////////////
 
-    //Методы
-    private void getClick(MainPage page) {
-        page.answer0.should(exist).shouldBe(visible).shouldHave(text("Сутки — 400 рублей. Оплата курьеру — наличными или картой.")).click();
+
+    public boolean checkAnswer(SelenideElement question, SelenideElement answer, String textAnswer) {
+        //Прокрутить и найти элемент
+        question.scrollTo();
+        //Открыть первый запрос
+        question.should(exist).shouldBe(visible).click();
+        // Проверяем соответствует ли текст  вопроса
+        answer.should(exist).shouldBe(visible).shouldHave(text(textAnswer)).click();
+        //"Сутки — 400 рублей. Оплата курьеру — наличными или картой."
+        return true;
     }
+
 
 }

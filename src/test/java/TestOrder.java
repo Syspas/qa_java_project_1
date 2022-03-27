@@ -56,12 +56,16 @@ public class TestOrder {
         page.inputOrderNum(incorrectOrderNum);
         // Нажать кнопку GO для поиска заказа.
         page.clickFindOrder();
-
       //assertTrue($(byClassName("Track_NotFound__6oaoY")).isDisplayed());
         CheckStatusPage errorPage = new CheckStatusPage();
       assertTrue(errorPage.popupError.isDisplayed());
     }
 
+    /*
+    Тест на отбражение не существующего заказа
+    Ожидаемый результат:
+    Заказ ненайден.
+    */
     @Test
     public void checkingOrderStatus3() {
         //Перейти по адресу
@@ -75,11 +79,7 @@ public class TestOrder {
         .clickFindOrder()
         //Проверить сообщение
         .isErrorMessageDisplayed();
-
-        //Запускаем проверку  если переменная true
+        //Запускаем проверку  если переменная true то тест пройден
         assertTrue(isErrorMessageDisplayed);
-
-
-
     }
 }
