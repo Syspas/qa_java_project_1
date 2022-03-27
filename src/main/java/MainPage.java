@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Condition.*;
 import static org.junit.Assert.assertTrue;
 
 
-public class MainPage {
+public class MainPage extends BasicMethods {
     final static String URL = "https://qa-scooter.praktikum-services.ru/";
 //////////////////////////////////////////////////////////////////////////////////////////////////////
     final static String answerText0= "Сутки — 400 рублей. Оплата курьеру — наличными или картой.";
@@ -17,7 +17,8 @@ public class MainPage {
     final static String answerText5="Самокат приезжает к вам с полной зарядкой. Этого хватает на восемь суток — даже если будете кататься без передышек и во сне. Зарядка не понадобится.";
     final static String answerText6="Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои.";
     final static String answerText7="Да, обязательно. Всем самокатов! И Москве, и Московской области.";
-        //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
     //Найти кнопку Заказать
     @FindBy(how = How.CLASS_NAME,using = "Header_Link__1TAG7")
     private SelenideElement btnShowInputField;
@@ -129,18 +130,6 @@ public boolean isErrorMessageDisplayed(){
     @FindBy(how = How.ID,using = "accordion__panel-7")
     public static SelenideElement answer7;
 ///////////////////////////////////////////////////////////////////////////////////////////
-
-
-    public boolean checkAnswer(SelenideElement question, SelenideElement answer, String textAnswer) {
-        //Прокрутить и найти элемент
-        question.scrollTo();
-        //Открыть первый запрос
-        question.should(exist).shouldBe(visible).click();
-        // Проверяем соответствует ли текст  вопроса
-        answer.should(exist).shouldBe(visible).shouldHave(text(textAnswer)).click();
-        //"Сутки — 400 рублей. Оплата курьеру — наличными или картой."
-        return true;
-    }
 
 
 }

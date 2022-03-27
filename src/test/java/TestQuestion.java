@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 public class TestQuestion {
     @Test
-    public void test1() {
+    public void TestQuestion1() {
         boolean checkAnswer = Selenide.open(MainPage.URL,MainPage.class).checkAnswer(
                 MainPage.question0,
                 MainPage.answer0,
@@ -16,7 +16,7 @@ public class TestQuestion {
     }
 
     @Test
-    public   void test2() {
+    public   void TestQuestion2() {
 
       boolean checkAnswer = Selenide.open(MainPage.URL,MainPage.class).checkAnswer(
                 MainPage.question1,
@@ -28,7 +28,7 @@ public class TestQuestion {
   }
 
     @Test
-    public   void test3() {
+    public   void TestQuestion3() {
 
         boolean checkAnswer = Selenide.open(MainPage.URL,MainPage.class).checkAnswer(
                 MainPage.question2,
@@ -40,7 +40,7 @@ public class TestQuestion {
     }
 
     @Test
-    public   void test4() {
+    public   void TestQuestion4() {
 
         boolean checkAnswer = Selenide.open(MainPage.URL,MainPage.class).checkAnswer(
                 MainPage.question3,
@@ -52,7 +52,7 @@ public class TestQuestion {
     }
 
     @Test
-    public   void test5() {
+    public   void TestQuestion5() {
 
         boolean checkAnswer = Selenide.open(MainPage.URL,MainPage.class).checkAnswer(
                 MainPage.question4,
@@ -64,7 +64,7 @@ public class TestQuestion {
     }
 
     @Test
-    public   void test6() {
+    public   void TestQuestion6() {
 
         boolean checkAnswer = Selenide.open(MainPage.URL,MainPage.class).checkAnswer(
                 MainPage.question5,
@@ -76,7 +76,7 @@ public class TestQuestion {
     }
 
     @Test
-    public   void test7() {
+    public   void TestQuestion7() {
 
         boolean checkAnswer = Selenide.open(MainPage.URL,MainPage.class).checkAnswer(
                 MainPage.question6,
@@ -88,7 +88,7 @@ public class TestQuestion {
     }
 
     @Test
-    public   void test8() {
+    public   void TestQuestion8() {
 
         boolean checkAnswer = Selenide.open(MainPage.URL,MainPage.class).checkAnswer(
                 MainPage.question7,
