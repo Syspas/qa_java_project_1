@@ -3,10 +3,11 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class OrderPage {
+public class OrderPage extends MainPage {
+
 ///Найти кнопку заказ  и нажать на нее
    @FindBy(how = How.CLASS_NAME,using = "Button_Button__ra12g")
-   public static SelenideElement orderButtonOnMainPageTop;
+   public  SelenideElement orderButtonOnMainPageTop;
     //Имя
     @FindBy(how = How.XPATH,using = "//input[@placeholder='* Имя']")
     public static SelenideElement nameField;
@@ -40,7 +41,7 @@ public class OrderPage {
     public static SelenideElement checkboxBoxBlack;
    //Комментарий для курьера
     @FindBy(how = How.XPATH,using = "//input[@placeholder='Комментарий для курьера']")
-    public static SelenideElement comment;
+    public static SelenideElement commentField;
     //Нажать на кнопку заказать
     @FindBy(how = How.XPATH,using = "//button[@class='Button_Button__ra12g Button_Middle__1CSJM']")
     public static SelenideElement orderButton;
