@@ -19,9 +19,9 @@ public class CreateOrder {
         $(byXpath( "//input[@placeholder='* Имя']")).sendKeys("Петр");
         //
         $(byXpath( "//input[@placeholder='* Фамилия']")).sendKeys("Иванов");
-        //
+        //ввести адрес
         $(byXpath( "//input[@placeholder='* Адрес: куда привезти заказ']")).sendKeys("г Москва ул.Пушкина");
-       //
+       //Выбрать станцию метро
        $(byXpath("//input[@placeholder='* Станция метро']")).sendKeys(Keys.DOWN);
         $(byXpath("//input[@placeholder='* Станция метро']")).pressEnter();
        //
@@ -32,16 +32,16 @@ public class CreateOrder {
        $(byXpath( "//input[@placeholder='* Когда привезти самокат']")).sendKeys("29.03.2022");
       $(byXpath( "//input[@placeholder='* Когда привезти самокат']")).pressEnter();
       //Заполнить данные в выпадающем списке
-       // $(byXpath(  "//*/text()[normalize-space(.)='* Срок аренды']/parent::*")).click();
-     // $(byXpath(  "//*/text()[normalize-space(.)='* Срок аренды']/parent::*")).setValue("сутки");
-     // $(byXpath(  "//*/text()[normalize-space(.)='* Срок аренды']/parent::*")).pressEnter();
+       $(byXpath(  "//*/text()[normalize-space(.)='* Срок аренды']/parent::*")).click();
+       $(byXpath("//*/text()[normalize-space(.)='двое суток']/parent::*")).click();
        // Установить  значение чет бокса
         $(byXpath( "//input[@id='black']" )).click();
         $(byXpath( "//input[@placeholder='Комментарий для курьера']")).sendKeys("тест комент");
-
-
-        // нажать на кнопку заказать
+        //Нажать на кнопку заказать
         $(byXpath("//button[@class='Button_Button__ra12g Button_Middle__1CSJM']")).click();
+        //Нажать "Да" на кнопку в окне оформить заказ
+        $(byXpath("//*/text()[normalize-space(.)='Да']/parent::*")).click();
+
     }
 
 
