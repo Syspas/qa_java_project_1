@@ -1,8 +1,6 @@
 import com.codeborne.selenide.Selenide;
 import org.junit.Test;
 import org.openqa.selenium.Keys;
-
-
 import static com.codeborne.selenide.Condition.text;
 
 
@@ -11,7 +9,7 @@ public class CreateOrder extends BaseTest {
 
 
     @Test
-    public void CheckingOrderStatus() {
+    public void CheckingOrder() {
 
         //Перейти по адресу
         OrderPage page = Selenide.open(OrderPage.URL,OrderPage.class);
