@@ -7,8 +7,8 @@ public class BaseTest {
     @BeforeEach
     public  void startUP(){
         //WebDriverManager.chromedriver().setup();
-        //WebDriverManager.firefoxdriver().setup();
-        //Configuration.browser = "firefox";
+        WebDriverManager.firefoxdriver().setup();
+        Configuration.browser = "firefox";
        //WebDriverManager.firefoxdriver().setup();
        //Configuration.browser = FIREFOX;
     }
