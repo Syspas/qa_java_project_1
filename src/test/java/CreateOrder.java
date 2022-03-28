@@ -1,6 +1,5 @@
 import org.junit.Test;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.FindBy;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selectors.byXpath;
@@ -30,7 +29,7 @@ public class CreateOrder {
        $(byXpath("//button[@class='Button_Button__ra12g Button_Middle__1CSJM']")).click();
        // Заполнение  поля дата
        $(byXpath( "//input[@placeholder='* Когда привезти самокат']")).sendKeys("29.03.2022");
-      $(byXpath( "//input[@placeholder='* Когда привезти самокат']")).pressEnter();
+       $(byXpath( "//input[@placeholder='* Когда привезти самокат']")).pressEnter();
       //Заполнить данные в выпадающем списке
        $(byXpath(  "//*/text()[normalize-space(.)='* Срок аренды']/parent::*")).click();
        $(byXpath("//*/text()[normalize-space(.)='двое суток']/parent::*")).click();
@@ -41,7 +40,8 @@ public class CreateOrder {
         $(byXpath("//button[@class='Button_Button__ra12g Button_Middle__1CSJM']")).click();
         //Нажать "Да" на кнопку в окне оформить заказ
         $(byXpath("//*/text()[normalize-space(.)='Да']/parent::*")).click();
-
+        //Заказ оформлен , Проверяем что заказ оформлен ищем в окне текст
+        $(byXpath("//*[normalize-space(text()) = 'Заказ оформлен']")).shouldHave(text("Заказ оформлен"));
     }
 
 
