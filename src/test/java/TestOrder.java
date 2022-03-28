@@ -2,7 +2,7 @@ import com.codeborne.selenide.Selenide;
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 
-public class TestOrder {
+public class TestOrder extends BaseTest {
     private String incorrectOrderNum = "5";
 
     /*

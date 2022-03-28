@@ -1,15 +1,16 @@
 import com.codeborne.selenide.Configuration;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.BeforeEach;
+import static com.codeborne.selenide.Browsers.FIREFOX;
+import org.junit.Before;
 
 
 public class BaseTest {
-    @BeforeEach
-    public  void startUP(){
-        //WebDriverManager.chromedriver().setup();
-        WebDriverManager.firefoxdriver().setup();
-        Configuration.browser = "firefox";
-       //WebDriverManager.firefoxdriver().setup();
-       //Configuration.browser = FIREFOX;
+    @Before
+    public void setBrowser()
+    {
+        //Запускаем тест в браузере FIREFOX
+        Configuration.browser = FIREFOX ;
+        Configuration.browserSize = "1920x1080";
+
     }
+
 }

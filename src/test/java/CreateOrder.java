@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 
-public class CreateOrder {
+public class CreateOrder extends BaseTest {
     @Test
     public void CheckingOrderStatus() {
         //Перейти по адресу

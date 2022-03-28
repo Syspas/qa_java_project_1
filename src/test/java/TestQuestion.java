@@ -3,7 +3,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class TestQuestion {
+public class TestQuestion  extends BaseTest {
     @Test
     public void TestQuestion1() {
         boolean checkAnswer = Selenide.open(MainPage.URL,MainPage.class).checkAnswer(
