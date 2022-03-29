@@ -2,7 +2,6 @@ import com.codeborne.selenide.Selenide;
 import model.Customer;
 import org.junit.Test;
 import org.openqa.selenium.Keys;
-import static com.codeborne.selenide.Condition.text;
 import static org.junit.Assert.assertTrue;
 
 
@@ -49,15 +48,16 @@ public class TestOrder extends BaseTest {
         //Нажать "Да" на кнопку в окне оформить заказ
         page.yesButton.click();
         //Заказ оформлен , Проверяем что заказ оформлен ищем в окне текст
-        page.findTextTheOrderHasBeenIssued.shouldHave(text("Заказ оформлен"));
+        assertTrue(page.orderСheck());
     }
+
+
 
     /*
    Тест на создание заказка  с использование кпопки создать  по центру преложения.
     */
     @Test
     public void CheckingOrderTest2() {
-
         //Перейти по адресу
         OrderPage page = Selenide.open(OrderPage.URL, OrderPage.class);
         //прокрутить вниз и найти  кнопку "Заказать"
@@ -91,7 +91,7 @@ public class TestOrder extends BaseTest {
         //Нажать "Да" на кнопку в окне оформить заказ
         page.yesButton.click();
         //Заказ оформлен , Проверяем что заказ оформлен ищем в окне текст
-        page.findTextTheOrderHasBeenIssued.shouldHave(text("Заказ оформлен"));
+        assertTrue(page.orderСheck());
     }
 
 

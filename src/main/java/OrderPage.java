@@ -1,7 +1,7 @@
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import static com.codeborne.selenide.Condition.text;
 
 public class OrderPage extends MainPage {
 
@@ -54,4 +54,12 @@ public class OrderPage extends MainPage {
     //Заказ оформлен , Проверяем что заказ оформлен ищем в окне текст
     @FindBy(how = How.XPATH,using = "//*[normalize-space(text()) = 'Заказ оформлен']")
     public static SelenideElement findTextTheOrderHasBeenIssued;
+
+    //Заказ оформлен , Проверяем что заказ оформлен ищем в окне текст
+ public boolean orderСheck() {
+
+  findTextTheOrderHasBeenIssued.shouldHave(text("Заказ оформлен"));
+  return true;
+ }
+
 }
