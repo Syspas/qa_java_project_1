@@ -5,9 +5,12 @@ import org.openqa.selenium.support.How;
 
 public class OrderPage extends MainPage {
 
-///Найти кнопку заказ  и нажать на нее
+///Найти кнопку заказ на верху страницы
    @FindBy(how = How.CLASS_NAME,using = "Button_Button__ra12g")
    public  SelenideElement orderButtonOnMainPageTop;
+//Найти кнопку заказать по центру страницы
+    @FindBy(how = How.CLASS_NAME,using = "Button_UltraBig__UU3Lp")
+    public  SelenideElement orderButtonOnMainPageCenter;
     //Имя
     @FindBy(how = How.XPATH,using = "//input[@placeholder='* Имя']")
     public static SelenideElement nameField;
