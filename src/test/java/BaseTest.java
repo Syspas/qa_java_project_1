@@ -8,7 +8,7 @@ public class BaseTest {
     public void setBrowser()
     {
         //Запускаем тест в браузере FIREFOX
-        Configuration.browser = FIREFOX ;
+       // Configuration.browser = FIREFOX ;
         Configuration.browserSize = "1920x1080";
 
     }
