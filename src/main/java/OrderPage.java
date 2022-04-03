@@ -3,8 +3,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import static com.codeborne.selenide.Condition.text;
 
-public class OrderPage extends MainPage {
-
+public class OrderPage {
+    final static String URL = "https://qa-scooter.praktikum-services.ru/";
 ///Найти кнопку заказ на верху страницы
    @FindBy(how = How.CLASS_NAME,using = "Button_Button__ra12g")
    public  SelenideElement orderButtonOnMainPageTop;
@@ -57,7 +57,6 @@ public class OrderPage extends MainPage {
 
     //Заказ оформлен , Проверяем что заказ оформлен ищем в окне текст
  public boolean orderСheck() {
-
   findTextTheOrderHasBeenIssued.shouldHave(text("Заказ оформлен"));
   return true;
  }

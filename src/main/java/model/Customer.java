@@ -7,9 +7,6 @@ public class Customer {
     private final String metro;
     private final String phoneNumber;
     private final String dateReceipt;
-
-
-
     private final String comment;
 
 
