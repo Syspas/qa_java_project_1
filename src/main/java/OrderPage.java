@@ -1,4 +1,6 @@
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import static com.codeborne.selenide.Condition.text;
@@ -61,4 +63,37 @@ public class OrderPage {
   return true;
  }
 
+
+
+    public boolean check(String getName , String getSurname, String getAddress , String getPhoneNumber,String getDateReceipt,String getComment){
+    //Кнопка заказать на верху страницы
+        orderButtonOnMainPageTop.click();
+    //Имя
+       nameField.sendKeys(getName);
+    //Фамилия
+        surnameField.sendKeys(getSurname);
+    //ввести адрес
+       deliveryAddressField.sendKeys(getAddress);
+    //Выбрать станцию метро
+       MetroStationField.sendKeys(Keys.DOWN);
+       MetroStationField.pressEnter();
+    //
+       PhoneNumberField.sendKeys(getPhoneNumber);
+    // Нажать на кнопку Далее
+        nextButton.click();
+    // Заполнение  поля дата
+        dateReceiptScooter.sendKeys(getDateReceipt);
+        dateReceiptScooter.pressEnter();
+    //Заполнить данные в выпадающем списке
+        scooterRentalPeriod.click();
+        number2DaysScooterRental.click();
+    // Установить  значение чет бокса
+        checkboxBoxBlack.click();
+        commentField.sendKeys(getComment);
+    //Нажать на кнопку заказать
+        orderButton.click();
+    //Нажать "Да" на кнопку в окне оформить заказ
+        yesButton.click();
+        return true;
+    }
 }

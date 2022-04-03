@@ -1,7 +1,6 @@
 import com.codeborne.selenide.Selenide;
 import model.Customer;
 import org.junit.Test;
-import org.openqa.selenium.Keys;
 import static org.junit.Assert.assertTrue;
 
 
@@ -17,84 +16,33 @@ public class TestOrder extends BaseTest {
     @Test
     public void CheckingOrderTest1() {
 
-        //Перейти по адресу
-        OrderPage page = Selenide.open(OrderPage.URL, OrderPage.class);
-        //Кнопка заказать на верху страницы
-        page.orderButtonOnMainPageTop.click();
-        //Имя
-        page.nameField.sendKeys(customer1.getName());
-        //Фамилия
-        page.surnameField.sendKeys(customer1.getSurname());
-        //ввести адрес
-        page.deliveryAddressField.sendKeys(customer1.getAddress());
-        //Выбрать станцию метро
-        page.MetroStationField.sendKeys(Keys.DOWN);
-        page.MetroStationField.pressEnter();
-        //
-        page.PhoneNumberField.sendKeys(customer1.getPhoneNumber());
-        // Нажать на кнопку Далее
-        page.nextButton.click();
-        // Заполнение  поля дата
-        page.dateReceiptScooter.sendKeys(customer1.getDateReceipt());
-        page.dateReceiptScooter.pressEnter();
-        //Заполнить данные в выпадающем списке
-        page.scooterRentalPeriod.click();
-        page.number2DaysScooterRental.click();
-        // Установить  значение чет бокса
-        page.checkboxBoxBlack.click();
-        page.commentField.sendKeys(customer2.getComment());
-        //Нажать на кнопку заказать
-        page.orderButton.click();
-        //Нажать "Да" на кнопку в окне оформить заказ
-        page.yesButton.click();
-        //Заказ оформлен , Проверяем что заказ оформлен ищем в окне текст
-        assertTrue(page.orderСheck());
+        boolean isGoodTest = Selenide.open(OrderPage.URL, OrderPage.class).check(
+                customer1.getName(),
+                customer1.getSurname(),
+                customer1.getAddress(),
+                customer1.getPhoneNumber(),
+                customer1.getDateReceipt(),
+                customer1.getComment()
+                );
+        assertTrue(isGoodTest);
     }
-
-
 
     /*
    Тест на создание заказка  с использование кпопки создать  по центру преложения.
     */
     @Test
     public void CheckingOrderTest2() {
-        //Перейти по адресу
-        OrderPage page = Selenide.open(OrderPage.URL, OrderPage.class);
-        //прокрутить вниз и найти  кнопку "Заказать"
-        page.orderButtonOnMainPageCenter.scrollTo();
-        //Кнопка заказать на верху страницы
-        page.orderButtonOnMainPageCenter.click();
-        //Имя
-        page.nameField.sendKeys(customer2.getName());
-        //Фамилия
-        page.surnameField.sendKeys(customer2.getSurname());
-        //ввести адрес
-        page.deliveryAddressField.sendKeys(customer2.getAddress());
-        //Выбрать станцию метро
-        page.MetroStationField.sendKeys(Keys.DOWN);
-        page.MetroStationField.pressEnter();
-        //
-        page.PhoneNumberField.sendKeys(customer2.getPhoneNumber());
-        // Нажать на кнопку Далее
-        page.nextButton.click();
-        // Заполнение  поля дата
-        page.dateReceiptScooter.sendKeys(customer2.getDateReceipt());
-        page.dateReceiptScooter.pressEnter();
-        //Заполнить данные в выпадающем списке
-        page.scooterRentalPeriod.click();
-        page.number2DaysScooterRental.click();
-        // Установить  значение чет бокса
-        page.checkboxBoxBlack.click();
-        page.commentField.sendKeys(customer2.getComment());
-        //Нажать на кнопку заказать
-        page.orderButton.click();
-        //Нажать "Да" на кнопку в окне оформить заказ
-        page.yesButton.click();
-        //Заказ оформлен , Проверяем что заказ оформлен ищем в окне текст
-        assertTrue(page.orderСheck());
+
+        boolean isGoodTest = Selenide.open(OrderPage.URL, OrderPage.class).check(
+                customer2.getName(),
+                customer2.getSurname(),
+                customer2.getAddress(),
+                customer2.getPhoneNumber(),
+                customer2.getDateReceipt(),
+                customer2.getComment()
+        );
+        assertTrue(isGoodTest);
     }
-
-
     /*
     Тест на отбражение не существующего заказа
     Ожидаемый результат:
