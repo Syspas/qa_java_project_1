@@ -8,106 +8,81 @@ public class TestQuestion  extends BaseTest {
     @Test
     public void TestQuestion1() {
 
-        boolean isGoodTest = Selenide.open(MainPage.URL, MainPage.class)
-                //Открыть первый запрос
-                .scroll(MainPage.getQuestion0())
+      boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                 .check(MainPage.getQuestion0(),MainPage.getAnswer0(),MainPage.getAnswerText0());
-
-        //Запускаем проверку  если переменная true то тест пройден
-                 assertTrue(isGoodTest);
-
-
+                .selectSet("Вопрос №1");
+                //Запускаем проверку  если переменная true то тест пройден
+                 assertTrue(result);
     }
 
     @Test
     public void TestQuestion2() {
 
-        boolean isGoodTest = Selenide.open(MainPage.URL, MainPage.class)
-                //Открыть первый запрос
-                .scroll(MainPage.getQuestion1())
+        boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .check(MainPage.getQuestion1(),MainPage.getAnswer1(),MainPage.getAnswerText1());
-
+                .selectSet("Вопрос №2");
         //Запускаем проверку  если переменная true то тест пройден
-        assertTrue(isGoodTest);
-
-
+        assertTrue(result);
     }
 
     @Test
     public void TestQuestion3() {
 
-        boolean isGoodTest = Selenide.open(MainPage.URL, MainPage.class)
-                //Открыть первый запрос
-                .scroll(MainPage.getQuestion2())
+        boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .check(MainPage.getQuestion2(),MainPage.getAnswer2(),MainPage.getAnswerText2());
-
+                .selectSet("Вопрос №3");
         //Запускаем проверку  если переменная true то тест пройден
-        assertTrue(isGoodTest);
-
-
+        assertTrue(result);
     }
 
     @Test
     public void TestQuestion4() {
 
-        boolean isGoodTest = Selenide.open(MainPage.URL, MainPage.class)
-                //Открыть первый запрос
-                .scroll(MainPage.getQuestion3())
+        boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .check(MainPage.getQuestion3(),MainPage.getAnswer3(),MainPage.getAnswerText3());
-
+                .selectSet("Вопрос №4");
         //Запускаем проверку  если переменная true то тест пройден
-        assertTrue(isGoodTest);
-
-
+        assertTrue(result);
     }
 
     @Test
     public void TestQuestion5() {
 
-        boolean isGoodTest = Selenide.open(MainPage.URL, MainPage.class)
-                //Открыть первый запрос
-                .scroll(MainPage.getQuestion5())
+        boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .check(MainPage.getQuestion5(),MainPage.getAnswer5(),MainPage.getAnswerText5());
-
+                .selectSet("Вопрос №5");
         //Запускаем проверку  если переменная true то тест пройден
-        assertTrue(isGoodTest);
-
-
+        assertTrue(result);
     }
 
     @Test
     public void TestQuestion6() {
 
-        boolean isGoodTest = Selenide.open(MainPage.URL, MainPage.class)
-                //Открыть первый запрос
-                .scroll(MainPage.getQuestion5())
+        boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .check(MainPage.getQuestion5(),MainPage.getAnswer5(),MainPage.getAnswerText5());
-
+                .selectSet("Вопрос №6");
         //Запускаем проверку  если переменная true то тест пройден
-        assertTrue(isGoodTest);
-
-
+        assertTrue(result);
     }
 
     @Test
     public void TestQuestion7() {
 
-        boolean isGoodTest = Selenide.open(MainPage.URL, MainPage.class)
-                //Открыть первый запрос
-                .scroll(MainPage.getQuestion7())
+        boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .check(MainPage.getQuestion7(),MainPage.getAnswer7(),MainPage.getAnswerText7());
-
+                .selectSet("Вопрос №7");
         //Запускаем проверку  если переменная true то тест пройден
-        assertTrue(isGoodTest);
+        assertTrue(result);
+    }
 
+    @Test
+    public void TestQuestion8() {
 
+        boolean result = Selenide.open(MainPage.URL, MainPage.class)
+                //Проверяем соответствует ли текст  вопроса
+                .selectSet("Вопрос №8");
+        //Запускаем проверку  если переменная true то тест пройден
+        assertTrue(result);
     }
 
 }
