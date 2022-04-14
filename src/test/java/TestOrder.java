@@ -16,7 +16,8 @@ public class TestOrder extends BaseTest {
     @Test
     public void CheckingOrderTest1() {
 
-        boolean isGoodTest = Selenide.open(OrderPage.URL, OrderPage.class).check(
+        boolean result = Selenide.open(OrderPage.URL, OrderPage.class)
+                .clickOrderButtonOnMainPageTop().check(
                 customer1.getName(),
                 customer1.getSurname(),
                 customer1.getAddress(),
@@ -24,7 +25,7 @@ public class TestOrder extends BaseTest {
                 customer1.getDateReceipt(),
                 customer1.getComment()
                 );
-        assertTrue(isGoodTest);
+        assertTrue(result);
     }
 
     /*
@@ -33,7 +34,8 @@ public class TestOrder extends BaseTest {
     @Test
     public void CheckingOrderTest2() {
 
-        boolean isGoodTest = Selenide.open(OrderPage.URL, OrderPage.class).check(
+        boolean result = Selenide.open(OrderPage.URL, OrderPage.class)
+                .clickOrderButtonOnMainPageCenter().check(
                 customer2.getName(),
                 customer2.getSurname(),
                 customer2.getAddress(),
@@ -41,7 +43,7 @@ public class TestOrder extends BaseTest {
                 customer2.getDateReceipt(),
                 customer2.getComment()
         );
-        assertTrue(isGoodTest);
+        assertTrue(result);
     }
     /*
     Тест на отбражение не существующего заказа

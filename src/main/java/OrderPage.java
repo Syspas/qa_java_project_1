@@ -56,43 +56,66 @@ public class OrderPage {
     @FindBy(how = How.XPATH,using = "//*[normalize-space(text()) = 'Заказ оформлен']")
     private  SelenideElement findTextTheOrderHasBeenIssued;
 
-    //Заказ оформлен , Проверяем что заказ оформлен ищем в окне текст
- public boolean orderСheck() {
-  findTextTheOrderHasBeenIssued.shouldHave(text("Заказ оформлен"));
-  return true;
- }
+    public OrderPage clickOrderButtonOnMainPageTop(){
+        //Кнопка заказать на верху страницы
+        orderButtonOnMainPageTop.click();
+        return this;
+    }
+
+    public OrderPage  clickOrderButtonOnMainPageCenter(){
+        //Найти кнопку заказать по центру страницы
+        orderButtonOnMainPageCenter.scrollTo();
+        orderButtonOnMainPageCenter.click();
+        return this;
+
+    }
 
 
 // Тест создания заказа
     public boolean check(String getName , String getSurname, String getAddress , String getPhoneNumber,String getDateReceipt,String getComment){
-    //Кнопка заказать на верху страницы
-        orderButtonOnMainPageTop.click();
-    //Имя
-       nameField.sendKeys(getName);
-    //Фамилия
-        surnameField.sendKeys(getSurname);
-    //ввести адрес
-       deliveryAddressField.sendKeys(getAddress);
-    //Выбрать станцию метро
-       MetroStationField.sendKeys(Keys.DOWN);
-       MetroStationField.pressEnter();
-    //
-       PhoneNumberField.sendKeys(getPhoneNumber);
-    // Нажать на кнопку Далее
-        nextButton.click();
-    // Заполнение  поля дата
-        dateReceiptScooter.sendKeys(getDateReceipt);
-        dateReceiptScooter.pressEnter();
-    //Заполнить данные в выпадающем списке
-        scooterRentalPeriod.click();
-        number2DaysScooterRental.click();
-    // Установить  значение чет бокса
-        checkboxBoxBlack.click();
-        commentField.sendKeys(getComment);
-    //Нажать на кнопку заказать
-        orderButton.click();
-    //Нажать "Да" на кнопку в окне оформить заказ
-        yesButton.click();
-        return true;
+        boolean result;
+        try {
+            //Имя
+            nameField.sendKeys(getName);
+            //Фамилия
+            surnameField.sendKeys(getSurname);
+            //ввести адрес
+            deliveryAddressField.sendKeys(getAddress);
+            //Выбрать станцию метро
+            MetroStationField.sendKeys(Keys.DOWN);
+            MetroStationField.pressEnter();
+            //
+            PhoneNumberField.sendKeys(getPhoneNumber);
+            // Нажать на кнопку Далее
+            nextButton.click();
+            // Заполнение  поля дата
+            dateReceiptScooter.sendKeys(getDateReceipt);
+            dateReceiptScooter.pressEnter();
+            //Заполнить данные в выпадающем списке
+            scooterRentalPeriod.click();
+            number2DaysScooterRental.click();
+            // Установить  значение чет бокса
+            checkboxBoxBlack.click();
+            commentField.sendKeys(getComment);
+            //Нажать на кнопку заказать
+            orderButton.click();
+            //Нажать "Да" на кнопку в окне оформить заказ
+            yesButton.click();
+            //Заказ оформлен , Проверяем что заказ оформлен ищем в окне текст
+           findTextTheOrderHasBeenIssued .shouldHave(text("Заказ оформлен"));
+            return result = true;
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            System.out.println("Тест завершен с ошибкой");
+            return  result = false ;
+        }
+
     }
-}
+
+    }
+
+
+
+
+
+
