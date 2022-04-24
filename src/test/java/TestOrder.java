@@ -14,35 +14,38 @@ public class TestOrder extends BaseTest {
     Тест на создание заказка  с использование кпопки создать  вверху преложения.
      */
     @Test
-    public void CheckingOrderTest1() {
-
+    public void сheckingOrderTest1() {
         boolean result = Selenide.open(OrderPage.URL, OrderPage.class)
-                .clickOrderButtonOnMainPageTop().check(
-                customer1.getName(),
-                customer1.getSurname(),
-                customer1.getAddress(),
-                customer1.getPhoneNumber(),
-                customer1.getDateReceipt(),
-                customer1.getComment()
-                );
+                //Нажать на кнопка заказать на верху страницы
+                .clickOrderButtonOnMainPageTop()
+                //Заполнить первую форму заказа
+                .fillFirstForm(customer1.getName(), customer1.getSurname(), customer1.getAddress(), customer1.getPhoneNumber())
+                //Заполнить вторую форму заказа
+                .fillSecondForm(customer1.getDateReceipt(), customer1.getComment())
+                //Проверить закакз
+                .orderCheck();
+
+        //Проверить результат теста
         assertTrue(result);
     }
+
 
     /*
    Тест на создание заказка  с использование кпопки создать  по центру преложения.
     */
     @Test
-    public void CheckingOrderTest2() {
-
+    public void сheckingOrderTest2() {
         boolean result = Selenide.open(OrderPage.URL, OrderPage.class)
-                .clickOrderButtonOnMainPageCenter().check(
-                customer2.getName(),
-                customer2.getSurname(),
-                customer2.getAddress(),
-                customer2.getPhoneNumber(),
-                customer2.getDateReceipt(),
-                customer2.getComment()
-        );
+                //Нажать на кнопку заказать по центру страницы
+                .clickOrderButtonOnMainPageCenter()
+                //Заполнить первую форму заказа
+                .fillFirstForm(customer2.getName(), customer2.getSurname(), customer2.getAddress(), customer2.getPhoneNumber())
+                //Заполнить вторую форму заказа
+                .fillSecondForm(customer2.getDateReceipt(), customer2.getComment())
+                //Проверить закакз
+                .orderCheck();
+
+        //Проверить результат теста
         assertTrue(result);
     }
     /*
@@ -51,7 +54,7 @@ public class TestOrder extends BaseTest {
     Заказ ненайден.
     */
     @Test
-    public void CheckingOrderStatus() {
+    public void сheckingOrderStatus() {
         //Перейти по адресу
         boolean isErrorMessageDisplayed = Selenide.open(MainPage.URL, MainPage.class)
                 //Найти кнопку заказ и нажать на нее
@@ -65,7 +68,5 @@ public class TestOrder extends BaseTest {
                 .isErrorMessageDisplayed();
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(isErrorMessageDisplayed);
-
-
     }
 }
