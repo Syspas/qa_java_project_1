@@ -23,10 +23,10 @@ public class OrderPage {
     private SelenideElement deliveryAddressField;
     //* Станция метро
     @FindBy(how = How.XPATH, using = "//input[@placeholder='* Станция метро']")
-    private SelenideElement MetroStationField;
+    private SelenideElement мetroStationField;
     //
     @FindBy(how = How.XPATH, using = "//input[@placeholder='* Телефон: на него позвонит курьер']")
-    private SelenideElement PhoneNumberField;
+    private SelenideElement phoneNumberField;
     //Кнопка Далее
     @FindBy(how = How.XPATH, using = "//button[@class='Button_Button__ra12g Button_Middle__1CSJM']")
     private SelenideElement nextButton;
@@ -78,10 +78,10 @@ public class OrderPage {
         //ввести адрес
         deliveryAddressField.sendKeys(getAddress);
         //Выбрать станцию метро
-        MetroStationField.sendKeys(Keys.DOWN);
-        MetroStationField.pressEnter();
+        мetroStationField.sendKeys(Keys.DOWN);
+        мetroStationField.pressEnter();
         //
-        PhoneNumberField.sendKeys(getPhoneNumber);
+        phoneNumberField.sendKeys(getPhoneNumber);
         // Нажать на кнопку Далее
         nextButton.click();
         return this;
