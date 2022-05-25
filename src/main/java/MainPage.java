@@ -9,7 +9,125 @@ import static com.codeborne.selenide.Condition.*;
 
 public class MainPage {
     final static String URL = "https://qa-scooter.praktikum-services.ru/";
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    //Лого на главной странице
+    @FindBy(how = How.XPATH, using = "//img[@alt='Scooter']")
+    private SelenideElement logoOnMainPageTop;
+    //Учебный тренажер на главной странице
+    @FindBy(how = How.CSS, using = "div.Header_Disclaimer__3VEni")
+    private SelenideElement trainingSimulatorOnMainPageTop;
+    //Текст "Самокат на пару дней"
+    @FindBy(how = How.CSS, using = "div.Home_Header__iJKdX")
+    private SelenideElement topTitleOnMainPageTop;
+    //Текст "Привезём его прямо к вашей двери, а когда накатаетесь — заберём"
+    @FindBy(how = How.CSS, using = "div.Home_SubHeader__zwi_E")
+    private SelenideElement topSubTitleOnMainPageTop;
+    //Изображение с самокатом
+    @FindBy(how = How.CSS, using = "div.Home_Scooter__3YdJy > img[alt=\"Scooter blueprint\"]")
+    private SelenideElement pictureScooter;
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+    //Блок информации о самокате
+    //#################################################################################################
+    // "Модель Toxic PRO"
+    //#################################################################################################
+    //Модель самоката текст "Модель Toxic PRO"
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Модель Toxic PRO']/parent::*")
+    private SelenideElement titleLabel1;
+    //Разделитель
+    @FindBy(how = How.CSS, using = "div.Home_Separator__3cWAk")
+    private SelenideElement titleLabel2;
+
+    //#################################################################################################
+    //1 "Максимальная скорость"  "40 км/ч"
+    //#################################################################################################
+    //Модель самоката текст "Максимальная скорость"
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Максимальная скорость']/parent::*")
+    private SelenideElement titleLabel4;
+    //Модель самоката текст "40 км/ч"
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='40 км/ч']/parent::*")
+    private SelenideElement titleLabel5;
+
+
+    //#################################################################################################
+    //2"Проедет без подзарядки" "80 км"
+    //#################################################################################################
+    //Сколько самокат может проехать без подзарядки текст "Проедет без подзарядки"
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Проедет без подзарядки']/parent::*")
+    private SelenideElement titleLabel7;
+    //Дистанция которую может проехать самокат на одной зарядке  "80 км"
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='80 км']/parent::*")
+    private SelenideElement titleLabel8;
+
+
+    //#################################################################################################
+    // 3"Выдерживает вес"    "120 кг"
+    //#################################################################################################
+    //Самокат сможет выдержать вес текст "Выдерживает вес"
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Выдерживает вес']/parent::*")
+    private SelenideElement titleLabel10;
+    //Самокат сможет выдержать вес текст "120 кг"
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='120 кг']/parent::*")
+    private SelenideElement titleLabel11;
+
+
+    //#################################################################################################
+    // Найти текст "Как это работает"
+    //#################################################################################################
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Как это работает']/parent::*")
+    private SelenideElement titleLabel12;
+    //#################################################################################################
+    // 1
+    //#################################################################################################
+    // 1 в кружочке
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='1']/parent::*")
+    private SelenideElement titleLabel3;
+    //Найти текст "Заказываете самокат"
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Заказываете самокат']/parent::*")
+    private SelenideElement titleLabel13;
+    //Найти текст "Выбираете, когда и куда привезти"
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Выбираете, когда и куда привезти']/parent::*")
+    private SelenideElement titleLabel14;
+    //#################################################################################################
+    // 2
+    //#################################################################################################
+    // 2 в кружочке
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='2']/parent::*")
+    private SelenideElement titleLabel6;
+    //Найти текст "Курьер привозит самокат"
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Курьер привозит самокат']/parent::*")
+    private SelenideElement titleLabel15;
+    //Найти текст "А вы — оплачиваете аренду"
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='А вы — оплачиваете аренду']/parent::*")
+    private SelenideElement titleLabel16;
+    //#################################################################################################
+    // 3
+    //#################################################################################################
+    // 3 в кружочке
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='3']/parent::*")
+    private SelenideElement titleLabel9;
+    //Найти текст "Катаетесь"
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Катаетесь']/parent::*")
+    private SelenideElement titleLabel17;
+    //Найти текст "Сколько часов аренды осталось — видно на сайте"
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Сколько часов аренды осталось — видно на сайте']/parent::*")
+    private SelenideElement titleLabel18;
+    //#################################################################################################
+    // 4
+    //#################################################################################################
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='4']/parent::*")
+    private SelenideElement titleLabel19;
+    //Найти текст "Курьер забирает самокат"
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Курьер забирает самокат']/parent::*")
+    private SelenideElement titleLabel20;
+    //Найти текст "Когда аренда заканчивается"
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Когда аренда заканчивается']/parent::*")
+    private SelenideElement titleLabel21;
+    //#################################################################################################
+    //Найти текст "Вопросы о важном"
+    @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Вопросы о важном']/parent::*")
+    private SelenideElement titleLabel22;
+    //#################################################################################################
+
     private String answerText0 = "Сутки — 400 рублей. Оплата курьеру — наличными или картой.";
     private String answerText1 = "Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.";
     private String answerText2 = "Допустим, вы оформляете заказ на 8 мая. Мы привозим самокат 8 мая в течение дня. Отсчёт времени аренды начинается с момента, когда вы оплатите заказ курьеру. Если мы привезли самокат 8 мая в 20:30, суточная аренда закончится 9 мая в 20:30.";
@@ -32,7 +150,7 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//button[@class='Button_Button__ra12g Header_Button__28dPO']")
     private SelenideElement btnFindOrder;
 
-    // страница с с информациео оошибке
+    // страница с с информацией ошибке
     @FindBy(how = How.CLASS_NAME, using = "Track_NotFound__6oaoY")
     public SelenideElement popupError;
 
@@ -43,14 +161,14 @@ public class MainPage {
     }
 
     public MainPage clickShowInputField() {
-        //метод нажимает на кнопку зказать
+        //метод нажимает на кнопку заказать
         btnShowInputField.click();
         return this;
     }
 
     public MainPage inputOrderNum(String incorrectOrderNum) {
         //Нажать на поле  "ввести номер заказа"
-        //ввести номер закаа в поле "ввести номер заказа"
+        //ввести номер заказа в поле "ввести номер заказа"
         btnFindOrder.sendKeys(incorrectOrderNum);
         return this;
     }
