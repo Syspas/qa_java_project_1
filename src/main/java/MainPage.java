@@ -2,8 +2,6 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-import java.io.IOException;
-
 import static com.codeborne.selenide.Condition.*;
 
 
@@ -12,19 +10,19 @@ public class MainPage {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     //Лого на главной странице
     @FindBy(how = How.XPATH, using = "//img[@alt='Scooter']")
-    private SelenideElement logoOnMainPageTop;
+    private SelenideElement element1;
     //Учебный тренажер на главной странице
     @FindBy(how = How.CSS, using = "div.Header_Disclaimer__3VEni")
-    private SelenideElement trainingSimulatorOnMainPageTop;
+    private SelenideElement element2;
     //Текст "Самокат на пару дней"
     @FindBy(how = How.CSS, using = "div.Home_Header__iJKdX")
-    private SelenideElement topTitleOnMainPageTop;
+    private SelenideElement element3;
     //Текст "Привезём его прямо к вашей двери, а когда накатаетесь — заберём"
     @FindBy(how = How.CSS, using = "div.Home_SubHeader__zwi_E")
-    private SelenideElement topSubTitleOnMainPageTop;
+    private SelenideElement element4;
     //Изображение с самокатом
     @FindBy(how = How.CSS, using = "div.Home_Scooter__3YdJy > img[alt=\"Scooter blueprint\"]")
-    private SelenideElement pictureScooter;
+    private SelenideElement element5;
     /////////////////////////////////////////////////////////////////////////////////////////////////////
     //Блок информации о самокате
     //#################################################################################################
@@ -32,20 +30,20 @@ public class MainPage {
     //#################################################################################################
     //Модель самоката текст "Модель Toxic PRO"
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Модель Toxic PRO']/parent::*")
-    private SelenideElement titleLabel1;
+    private SelenideElement element6;
     //Разделитель
     @FindBy(how = How.CSS, using = "div.Home_Separator__3cWAk")
-    private SelenideElement titleLabel2;
+    private SelenideElement element7;
 
     //#################################################################################################
     //1 "Максимальная скорость"  "40 км/ч"
     //#################################################################################################
     //Модель самоката текст "Максимальная скорость"
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Максимальная скорость']/parent::*")
-    private SelenideElement titleLabel4;
+    private SelenideElement element8;
     //Модель самоката текст "40 км/ч"
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='40 км/ч']/parent::*")
-    private SelenideElement titleLabel5;
+    private SelenideElement element9;
 
 
     //#################################################################################################
@@ -53,10 +51,10 @@ public class MainPage {
     //#################################################################################################
     //Сколько самокат может проехать без подзарядки текст "Проедет без подзарядки"
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Проедет без подзарядки']/parent::*")
-    private SelenideElement titleLabel7;
+    private SelenideElement element10;
     //Дистанция которую может проехать самокат на одной зарядке  "80 км"
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='80 км']/parent::*")
-    private SelenideElement titleLabel8;
+    private SelenideElement element11;
 
 
     //#################################################################################################
@@ -64,68 +62,68 @@ public class MainPage {
     //#################################################################################################
     //Самокат сможет выдержать вес текст "Выдерживает вес"
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Выдерживает вес']/parent::*")
-    private SelenideElement titleLabel10;
+    private SelenideElement element12;
     //Самокат сможет выдержать вес текст "120 кг"
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='120 кг']/parent::*")
-    private SelenideElement titleLabel11;
+    private SelenideElement element13;
 
 
     //#################################################################################################
     // Найти текст "Как это работает"
     //#################################################################################################
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Как это работает']/parent::*")
-    private SelenideElement titleLabel12;
+    private SelenideElement element14;
     //#################################################################################################
     // 1
     //#################################################################################################
     // 1 в кружочке
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='1']/parent::*")
-    private SelenideElement titleLabel3;
+    private SelenideElement element15;
     //Найти текст "Заказываете самокат"
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Заказываете самокат']/parent::*")
-    private SelenideElement titleLabel13;
+    private SelenideElement element16;
     //Найти текст "Выбираете, когда и куда привезти"
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Выбираете, когда и куда привезти']/parent::*")
-    private SelenideElement titleLabel14;
+    private SelenideElement element17;
     //#################################################################################################
     // 2
     //#################################################################################################
     // 2 в кружочке
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='2']/parent::*")
-    private SelenideElement titleLabel6;
+    private SelenideElement element18;
     //Найти текст "Курьер привозит самокат"
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Курьер привозит самокат']/parent::*")
-    private SelenideElement titleLabel15;
+    private SelenideElement element19;
     //Найти текст "А вы — оплачиваете аренду"
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='А вы — оплачиваете аренду']/parent::*")
-    private SelenideElement titleLabel16;
+    private SelenideElement element20;
     //#################################################################################################
     // 3
     //#################################################################################################
     // 3 в кружочке
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='3']/parent::*")
-    private SelenideElement titleLabel9;
+    private SelenideElement element21;
     //Найти текст "Катаетесь"
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Катаетесь']/parent::*")
-    private SelenideElement titleLabel17;
+    private SelenideElement element22;
     //Найти текст "Сколько часов аренды осталось — видно на сайте"
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Сколько часов аренды осталось — видно на сайте']/parent::*")
-    private SelenideElement titleLabel18;
+    private SelenideElement element23;
     //#################################################################################################
     // 4
     //#################################################################################################
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='4']/parent::*")
-    private SelenideElement titleLabel19;
+    private SelenideElement element24;
     //Найти текст "Курьер забирает самокат"
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Курьер забирает самокат']/parent::*")
-    private SelenideElement titleLabel20;
+    private SelenideElement element25;
     //Найти текст "Когда аренда заканчивается"
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Когда аренда заканчивается']/parent::*")
-    private SelenideElement titleLabel21;
+    private SelenideElement element26;
     //#################################################################################################
     //Найти текст "Вопросы о важном"
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Вопросы о важном']/parent::*")
-    private SelenideElement titleLabel22;
+    private SelenideElement element27;
     //#################################################################################################
 
     private String answerText0 = "Сутки — 400 рублей. Оплата курьеру — наличными или картой.";
@@ -260,7 +258,7 @@ public class MainPage {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
-Выбираем определенный тесткейс с параметрами и вызываем функцию
+Выбираем определенный тест кейс с параметрами и вызываем функцию
  */
     public boolean selectSet(String selectSet) {
 
@@ -288,4 +286,79 @@ public class MainPage {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     }
-}
+
+    //#################################################################################################
+
+    private boolean checkingElement(SelenideElement element) {
+        //Прокрутить страницу, чтобы найти элемент
+        element.scrollTo();
+        //Открыть первый запрос
+        element.should(exist).shouldBe(visible).click();
+        //Проверяем соответствует ли текст  вопроса
+        return element.should(exist).shouldBe(visible).isDisplayed();
+    }
+
+    public boolean item(String selectSet) {
+
+        switch (selectSet) {
+            case "Проверить №1 элемент":
+                return checkingElement(element1);
+            case "Проверить №2 элемент":
+                return checkingElement(element2);
+            case "Проверить №3 элемент":
+                return checkingElement(element3);
+            case "Проверить №4 элемент":
+                return checkingElement(element4);
+            case "Проверить №5 элемент":
+                return checkingElement(element5);
+            case "Проверить №6 элемент":
+                return checkingElement(element6);
+            case "Проверить №7 элемент":
+                return checkingElement(element7);
+            case "Проверить №8 элемент":
+                return checkingElement(element8);
+            case "Проверить №9 элемент":
+                return checkingElement(element9);
+            case "Проверить №10 элемент":
+                return checkingElement(element10);
+            case "Проверить №11 элемент":
+                return checkingElement(element11);
+            case "Проверить №12 элемент":
+                return checkingElement(element12);
+            case "Проверить №13 элемент":
+                return checkingElement(element13);
+            case "Проверить №14 элемент":
+                return checkingElement(element14);
+            case "Проверить №15 элемент":
+                return checkingElement(element15);
+            case "Проверить №16 элемент":
+                return checkingElement(element16);
+            case "Проверить №17 элемент":
+                return checkingElement(element17);
+            case "Проверить №18 элемент":
+                return checkingElement(element18);
+            case "Проверить №19 элемент":
+                return checkingElement(element19);
+            case "Проверить №20 элемент":
+                return checkingElement(element20);
+            case "Проверить №21 элемент":
+                return checkingElement(element21);
+            case "Проверить №22 элемент":
+                return checkingElement(element22);
+            case "Проверить №23 элемент":
+                return checkingElement(element23);
+            case "Проверить №24 элемент":
+                return checkingElement(element24);
+            case "Проверить №25 элемент":
+                return checkingElement(element25);
+            case "Проверить №26 элемент":
+                return checkingElement(element26);
+            case "Проверить №27 элемент":
+                return checkingElement(element27);
+            default:
+                return false;
+
+        }
+        //#################################################################################################
+
+}}
