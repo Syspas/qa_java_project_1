@@ -52,7 +52,7 @@ public class MainPage {
     //Сколько самокат может проехать без подзарядки текст "Проедет без подзарядки"
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='Проедет без подзарядки']/parent::*")
     private SelenideElement element10;
-    //Дистанция которую может проехать самокат на одной зарядке  "80 км"
+    //Дистанция, которую может проехать самокат на одной зарядке  "80 км"
     @FindBy(how = How.XPATH, using = "//*/text()[normalize-space(.)='80 км']/parent::*")
     private SelenideElement element11;
 
@@ -298,7 +298,16 @@ public class MainPage {
         return element.should(exist).shouldBe(visible).isDisplayed();
     }
 
-    public boolean item(String selectSet) {
+    private boolean checkingElementS(SelenideElement element) {
+        //Прокрутить страницу, чтобы найти элемент
+        element14.scrollTo();
+        //Открыть первый запрос
+        element.should(exist).shouldBe(visible).click();
+        //Проверяем соответствует ли текст  вопроса
+        return element.should(exist).shouldBe(visible).isDisplayed();
+    }
+
+    public boolean testElement(String selectSet) {
 
         switch (selectSet) {
             case "Проверить №1 элемент":
@@ -312,7 +321,7 @@ public class MainPage {
             case "Проверить №5 элемент":
                 return checkingElement(element5);
             case "Проверить №6 элемент":
-                return checkingElement(element6);
+                return checkingElementS(element6);
             case "Проверить №7 элемент":
                 return checkingElement(element7);
             case "Проверить №8 элемент":

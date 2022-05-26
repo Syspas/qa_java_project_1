@@ -10,7 +10,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №1 элемент");
+                .testElement("Проверить №1 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -20,7 +20,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №2 элемент");
+                .testElement("Проверить №2 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -31,7 +31,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №3 элемент");
+                .testElement("Проверить №3 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -41,7 +41,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №4 элемент");
+                .testElement("Проверить №4 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -51,7 +51,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №5 элемент");
+                .testElement("Проверить №5 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -62,7 +62,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №6 элемент");
+                .testElement("Проверить №6 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -72,7 +72,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №7 элемент");
+                .testElement("Проверить №7 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -82,7 +82,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №8 элемент");
+                .testElement("Проверить №8 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -92,7 +92,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №9 элемент");
+                .testElement("Проверить №9 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -103,7 +103,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №10 элемент");
+                .testElement("Проверить №10 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -113,7 +113,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №11 элемент");
+                .testElement("Проверить №11 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -123,7 +123,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №12 элемент");
+                .testElement("Проверить №12 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -133,7 +133,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №13 элемент");
+                .testElement("Проверить №13 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -143,7 +143,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №14 элемент");
+                .testElement("Проверить №14 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -153,7 +153,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №15 элемент");
+                .testElement("Проверить №15 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -163,7 +163,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №16 элемент");
+                .testElement("Проверить №16 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -173,7 +173,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №17 элемент");
+                .testElement("Проверить №17 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -184,7 +184,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №18 элемент");
+                .testElement("Проверить №18 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -194,7 +194,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №19 элемент");
+                .testElement("Проверить №19 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -204,7 +204,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №20 элемент");
+                .testElement("Проверить №20 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -214,7 +214,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №21 элемент");
+                .testElement("Проверить №21 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -224,7 +224,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №22 элемент");
+                .testElement("Проверить №22 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -234,7 +234,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №23 элемент");
+                .testElement("Проверить №23 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -244,7 +244,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №24 элемент");
+                .testElement("Проверить №24 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -255,7 +255,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №25 элемент");
+                .testElement("Проверить №25 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -266,7 +266,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №20 элемент");
+                .testElement("Проверить №20 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
@@ -277,7 +277,7 @@ public class TestMainPage extends BaseTest {
 
         boolean result = Selenide.open(MainPage.URL, MainPage.class)
                 //Проверяем соответствует ли текст  вопроса
-                .item("Проверить №27 элемент");
+                .testElement("Проверить №27 элемент");
         //Запускаем проверку  если переменная true то тест пройден
         assertTrue(result);
     }
