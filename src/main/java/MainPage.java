@@ -289,85 +289,10 @@ public class MainPage {
 
     //#################################################################################################
 
-    private boolean checkingElement(SelenideElement element) {
-        //Прокрутить страницу, чтобы найти элемент
-        element.scrollTo();
-        //Открыть первый запрос
-        element.should(exist).shouldBe(visible).click();
-        //Проверяем соответствует ли текст  вопроса
-        return element.should(exist).shouldBe(visible).isDisplayed();
-    }
 
-    private boolean checkingElementS(SelenideElement element) {
-        //Прокрутить страницу, чтобы найти элемент
-        element14.scrollTo();
-        //Открыть первый запрос
-        element.should(exist).shouldBe(visible).click();
-        //Проверяем соответствует ли текст  вопроса
-        return element.should(exist).shouldBe(visible).isDisplayed();
-    }
-
-    public boolean testElement(String selectSet) {
-
-        switch (selectSet) {
-            case "Проверить №1 элемент":
-                return checkingElement(element1);
-            case "Проверить №2 элемент":
-                return checkingElement(element2);
-            case "Проверить №3 элемент":
-                return checkingElement(element3);
-            case "Проверить №4 элемент":
-                return checkingElement(element4);
-            case "Проверить №5 элемент":
-                return checkingElement(element5);
-            case "Проверить №6 элемент":
-                return checkingElementS(element6);
-            case "Проверить №7 элемент":
-                return checkingElement(element7);
-            case "Проверить №8 элемент":
-                return checkingElement(element8);
-            case "Проверить №9 элемент":
-                return checkingElement(element9);
-            case "Проверить №10 элемент":
-                return checkingElement(element10);
-            case "Проверить №11 элемент":
-                return checkingElement(element11);
-            case "Проверить №12 элемент":
-                return checkingElement(element12);
-            case "Проверить №13 элемент":
-                return checkingElement(element13);
-            case "Проверить №14 элемент":
-                return checkingElement(element14);
-            case "Проверить №15 элемент":
-                return checkingElement(element15);
-            case "Проверить №16 элемент":
-                return checkingElement(element16);
-            case "Проверить №17 элемент":
-                return checkingElement(element17);
-            case "Проверить №18 элемент":
-                return checkingElement(element18);
-            case "Проверить №19 элемент":
-                return checkingElement(element19);
-            case "Проверить №20 элемент":
-                return checkingElement(element20);
-            case "Проверить №21 элемент":
-                return checkingElement(element21);
-            case "Проверить №22 элемент":
-                return checkingElement(element22);
-            case "Проверить №23 элемент":
-                return checkingElement(element23);
-            case "Проверить №24 элемент":
-                return checkingElement(element24);
-            case "Проверить №25 элемент":
-                return checkingElement(element25);
-            case "Проверить №26 элемент":
-                return checkingElement(element26);
-            case "Проверить №27 элемент":
-                return checkingElement(element27);
-            default:
-                return false;
-
-        }
         //#################################################################################################
 
-}}
+}
+
+
+
