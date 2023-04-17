@@ -20,7 +20,7 @@ public class BaseTest {
         //Для быстрого ввода текста в поля
         Configuration.fastSetValue = true;
         //Запускать скрытый браузер
-        Configuration.headless=true;
+        //Configuration.headless=true;
 
 
     }
